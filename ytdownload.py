@@ -34,7 +34,7 @@ def start():
     global n
     if choice1==1:
         stream=vdo.streams.get_audio_only()
-        out_file=stream.download(output_path=r"C:\Users\user\Desktop")
+        out_file=stream.download(output_path=r"D:\ytdownloaded")
         base, ext = os.path.splitext(out_file)
         new_file = base + '.mp3'
         try:
@@ -45,7 +45,7 @@ def start():
     elif choice1==2:
         quality=res.get()
         vdostream=vdo.streams.get_by_resolution(quality)
-        out_file=vdostream.download(output_path=r"C:\Users\user\Desktop")
+        out_file=vdostream.download(output_path=r"D:\ytdownloaded")
         base, ext = os.path.splitext(out_file)
         new_file = base + f" {quality}" + ext
         try:
