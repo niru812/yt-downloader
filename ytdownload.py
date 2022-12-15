@@ -45,7 +45,6 @@ def start():
     elif choice1==2:
         quality=res.get()
         vdostream=vdo.streams.get_by_resolution(quality)
-        print(vdostream)
         out_file=vdostream.download(output_path=r"C:\Users\user\Desktop")
         base, ext = os.path.splitext(out_file)
         new_file = base + f" {quality}" + ext
@@ -72,8 +71,6 @@ def mp4():
             resoln.append(int(stream.resolution[:-1]))
     resoln= sorted(set(resoln))
     resoln= [str(i) + 'p' for i in resoln]
-    global r
-    r=[[1,i] for i in resoln]
     global res
     res= StringVar()
     res.set("Choose video resolution:")
